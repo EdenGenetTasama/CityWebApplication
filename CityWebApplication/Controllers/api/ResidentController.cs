@@ -68,16 +68,17 @@ namespace CityWebApplication.Controllers.api
             Resident personToUpdate = dataContext.Residents.First(item => item.Id == id);
             if (personToUpdate != null)
             {
-                redisterObj.Id = personToUpdate.Id;
-            redisterObj.first_name = personToUpdate.first_name;
-            redisterObj.last_name = personToUpdate.last_name;
-            redisterObj.date_Of_Birth = personToUpdate.date_Of_Birth;
-            redisterObj.address_in_city = personToUpdate.address_in_city;
-            redisterObj.seniority = personToUpdate.seniority;
+   
+                redisterObj.first_name = personToUpdate.first_name;
+                redisterObj.last_name = personToUpdate.last_name;
+                redisterObj.date_Of_Birth = personToUpdate.date_Of_Birth;
+                redisterObj.address_in_city = personToUpdate.address_in_city;
+                redisterObj.seniority = personToUpdate.seniority;
+                dataContext.SubmitChanges();
+                return Ok($"Update {personToUpdate.first_name}");
             }
-            dataContext.SubmitChanges();
+            return Ok($"Fail!");
 
-            return Ok($"Update {personToUpdate.first_name}");
         }
 
         // DELETE: api/Resident/5
