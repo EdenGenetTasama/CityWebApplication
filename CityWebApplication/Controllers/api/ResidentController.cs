@@ -71,7 +71,11 @@ namespace CityWebApplication.Controllers.api
         // DELETE: api/Resident/5
         public IHttpActionResult Delete(int id)
         {
-            return Ok();
+
+            Resident listOfResident = dataContext.Residents.First(ResidentItem => ResidentItem.Id == id);
+            dataContext.Residents.DeleteOnSubmit(listOfResident);
+            dataContext.SubmitChanges();
+            return Ok($"Deleted{listOfResident.first_name}");
         }
     }
 }
