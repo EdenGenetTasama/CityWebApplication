@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\api\ResidentController.cs" />
+    <Compile Include="Controllers\api\StudensController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +150,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CityDataContext.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Students.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Students.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -170,6 +176,14 @@
     </Content>
     <None Include="Models\CityDataContext.dbml.layout">
       <DependentUpon>CityDataContext.dbml</DependentUpon>
+    </None>
+    <Content Include="Models\Students.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Students.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Models\Students.dbml.layout">
+      <DependentUpon>Students.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
